@@ -10,7 +10,7 @@ function preload()
 }
 
 function setup() {
-	var canvas=createCanvas(700,800);
+	var canvas=createCanvas(1300,800);
     
 
 	engine = Engine.create();
@@ -18,31 +18,32 @@ function setup() {
 
 	//Create the Bodies Here.
 
-  ground1=new Ground(350,700,700,20);
-	paper1=new Paper(200,100,20);
-  bin1=new Bin(680,630,20,120);
-  bin2=new Bin(500,630,20,120);
-  bin3=new Bin(590,680,160,20);
+  ground1=new Ground(650,700,1300,20);
+	paper1=new Paper(120,100,65);
+  bin1=new Bin(1280,580,20,220);
+  bin2=new Bin(1100,580,20,220);
+  bin3=new Bin(1190,680,160,20);
 }
 
 
 function draw() {
 	
-  background(0);
+  background(100);
   Engine.update(engine);
-  ground1.display();
   paper1.display();
-  bin1.display();
-bin2.display();
-bin3.display();
+  ground1.display();
+  bin3.display();
+  
+  
   
  
 }
 
 function keyPressed(){
   if(keyCode===UP_ARROW){
-    Matter.Body.applyForce(paper1.body,paper1.body.position,{x:80,y:150});
+    Matter.Body.applyForce(paper1.body,paper1.body.position,{x:130,y:-130});
   }
+  
 }
 
 

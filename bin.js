@@ -6,19 +6,24 @@ class Bin{
         'friction':0.5,
         'density':0.8, 
         }
+    
     this.body=Bodies.rectangle(x,y,width,height,options);
     this.width=width;
     this.height=height;
+    this.image=loadImage("dustbingreen.png");
     World.add(world,this.body);
     
     }
     display(){
-        var binpos=this.body.position;
+        
          push ();
-         translate(binpos.x,binpos.y);
+         
          fill ("green");
-         rectMode (CENTER);
-         rect(0,0,this.width,this.height);
+         imageMode (CENTER);
+        if(this.height===20){
+            
+         image(this.image,1190,580,180,220);
+        }
          pop ();
     }
 }
